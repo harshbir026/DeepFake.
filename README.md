@@ -1,10 +1,9 @@
 Deepfake Detection in Images using Signature Analysis and Robust Adversarial Handling
 ====================================================================================
 
-Course Project — CS-671: Deep Learning and its Applications
-Indian Institute of Technology (IIT) Mandi
+Course Project: CS-671: Deep Learning and its Applications
 
-Project Statement 25 (PS 25):
+Project Statement:
 Deepfake Detection in Images using Signature Analysis and Robust Adversarial Handling
 
 ------------------------------------------------------------------------------------
