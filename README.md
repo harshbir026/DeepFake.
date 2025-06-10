@@ -46,35 +46,7 @@ Most existing methods fail to generalize across different generators — our app
 addresses this gap.
 
 ------------------------------------------------------------------------------------
-Improvements & Experiments:
----------------------------
 
-Before finalizing the CLIP-ViT + RBF-SVM pipeline, we explored and compared several other methods:
-
-1. **Handcrafted Augmentations (CNNDet)**  
-   • Applied blur, JPEG-compression and noise augmentations.  
-   • Result: High accuracy on seen generators but very poor generalization to unseen models.
-
-2. **Patch-Level Forensics**  
-   • Focused on localized inconsistencies in small image patches.  
-   • Result: Good at detecting superficial artifacts but failed when generators produced globally consistent images.
-
-3. **CLIP-Based Embeddings with Other Classifiers (Ojha et al. variant)**  
-   • Tried CLIP ViT-L/14 embeddings with linear SVM, polynomial SVM and k-NN.  
-   • Result: Linear SVM was too simplistic, polynomial SVM improved margins but still trailed the RBF kernel; k-NN suffered from high variability.
-
-4. **SigLIP L-16 Features**  
-   • Tested embeddings from SigLIP L-16 as an alternative frozen encoder.  
-   • Result: Slightly lower average accuracy (~80%) and less robust on unseen diffusion models.
-
-5. **Hyperparameter Grid Search**  
-   • For each model + classifier pair, ran cross-validation grid search over C, γ (for RBF), and degree/coef0 (for polynomial).  
-   • Observed that RBF SVM with C=1 and γ tuned per-model consistently outperformed others.
-
-**Final Takeaway:**  
-Transformer-based vision embeddings (especially CLIP ViT-H/14) combined with an RBF SVM provided the **best balance** of per-generator accuracy and strong generalization to completely unseen deepfake methods.
-
-------------------------------------------------------------------------------------
 Architecture & Approach:
 ------------------------
 
@@ -122,6 +94,17 @@ Per Generator Performance:
 
 Directory Structure:
 --------------------
+
+Due to GitHub file size limits, models and reports are stored externally:
+
+📁 DINOv2 Folder: [Drive Link](https://drive.google.com/drive/folders/1o-rxIA8mBluSk5WyvsWYKBJafrtU19mP).
+
+📁 CLIP ViT-H14 & L14 Folders:[Drive Link](https://drive.google.com/drive/folders/1HWMmCz8TIfiMe6svDLCtQCoTkJACb50E).
+
+📁 Additional Files / Random Experiments:[Drive Link](https://drive.google.com/drive/folders/1cei3Wf9XndkQgJdc96IiPbgrm9lZCVYT).
+
+📂 Repo Structure (with important files):
+
 ```
 CS-671_Project/
 ├── Clip_VIT_h14/
@@ -138,37 +121,63 @@ CS-671_Project/
 │   └── classification_report/
 └── README.md
 ```
+
 ------------------------------------------------------------------------------------
 
-Key Takeaways:
---------------
+Improvements & Experiments:
+---------------------------
 
-- Vision Transformer embeddings capture deepfake generation patterns effectively.
-- Combining frozen features with SVM classifiers provides strong generalization.
-- Transformer + RBF SVM is a powerful combo for image authenticity detection.
+Before finalizing the CLIP-ViT + RBF-SVM pipeline, we explored and compared several other methods:
+
+1. Handcrafted Augmentations (CNNDet)  
+   • Applied blur, JPEG-compression and noise.  
+   • Result: High accuracy on seen generators but very poor generalization.
+
+2. Patch-Level Forensics  
+   • Focused on localized visual inconsistencies.  
+   • Result: Failed when generators produced globally consistent images.
+
+3. CLIP-Based Embeddings with Other Classifiers (Ojha et al. variant)  
+   • Tried linear SVM, polynomial SVM and k-NN.  
+   • Result: RBF SVM clearly outperformed.
+
+4. SigLIP L-16 Features  
+   • Slightly lower average accuracy (~80%), weaker generalization.
+
+5. Hyperparameter Grid Search  
+   • Per-model tuning using cross-validation.  
+   • RBF SVM with C=1 and tuned γ worked best.
+
+Final Takeaway:
+Transformer-based vision features (especially from CLIP ViT-H/14) combined with 
+RBF SVM provided the best results in terms of accuracy and generalization.
 
 ------------------------------------------------------------------------------------
 
 Future Work:
 ------------
 
-- Reduce embedding dimensions for performance
-- Extend to diffusion-based models (e.g. Stable Diffusion, DALL·E)
-- Explore few-shot learning for fast adaptation
-- Add adversarial training for evasion resistance
-- Ensemble multiple encoders for higher robustness
+Work is currently in progress on applying **few-shot learning & adversarial training** to adapt models 
+to unseen deepfake generators quickly.
+
+📽️ Few-Shot Learning & Adversarial Training Concept PPT: [Drive Link](https://drive.google.com/file/d/1bFFZ-0i3eJBwT7fuRwZECMxyfnmg406-/view?usp=drivesdk).
+
+📽️ Final Project Presentation PPT: [Drive Link](https://drive.google.com/file/d/1bGOYsq3QnbITUGEotX1A_Ua9PC5SCV00/view?usp=drivesdk).
+
+Other directions include:
+- Reduce embedding dimensionality for efficiency.
+- Add data from newer diffusion models (e.g., DALL·E, Stable Diffusion).
+- Use ensemble models for increased robustness.
 
 ------------------------------------------------------------------------------------
 
 Contact:
 --------
 
-For any queries, contact:
-Aditya Tayal — b23243@students.iitmandi.ac.in
+For any queries, contact: [Aditya Tayal](mailto:adityatayal404@gmail.com)
 
 ------------------------------------------------------------------------------------
 
 Note:
 -----
-
 Developed as part of coursework for CS-671: Deep Learning and Its Applications at IIT Mandi.
