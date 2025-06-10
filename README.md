@@ -46,7 +46,35 @@ Most existing methods fail to generalize across different generators — our app
 addresses this gap.
 
 ------------------------------------------------------------------------------------
+Improvements & Experiments:
+---------------------------
 
+Before finalizing the CLIP-ViT + RBF-SVM pipeline, we explored and compared several other methods:
+
+1. **Handcrafted Augmentations (CNNDet)**  
+   • Applied blur, JPEG-compression and noise augmentations.  
+   • Result: High accuracy on seen generators but very poor generalization to unseen models.
+
+2. **Patch-Level Forensics**  
+   • Focused on localized inconsistencies in small image patches.  
+   • Result: Good at detecting superficial artifacts but failed when generators produced globally consistent images.
+
+3. **CLIP-Based Embeddings with Other Classifiers (Ojha et al. variant)**  
+   • Tried CLIP ViT-L/14 embeddings with linear SVM, polynomial SVM and k-NN.  
+   • Result: Linear SVM was too simplistic, polynomial SVM improved margins but still trailed the RBF kernel; k-NN suffered from high variability.
+
+4. **SigLIP L-16 Features**  
+   • Tested embeddings from SigLIP L-16 as an alternative frozen encoder.  
+   • Result: Slightly lower average accuracy (~80%) and less robust on unseen diffusion models.
+
+5. **Hyperparameter Grid Search**  
+   • For each model + classifier pair, ran cross-validation grid search over C, γ (for RBF), and degree/coef0 (for polynomial).  
+   • Observed that RBF SVM with C=1 and γ tuned per-model consistently outperformed others.
+
+**Final Takeaway:**  
+Transformer-based vision embeddings (especially CLIP ViT-H/14) combined with an RBF SVM provided the **best balance** of per-generator accuracy and strong generalization to completely unseen deepfake methods.
+
+------------------------------------------------------------------------------------
 Architecture & Approach:
 ------------------------
 
@@ -94,7 +122,7 @@ Per Generator Performance:
 
 Directory Structure:
 --------------------
-
+```
 CS-671_Project/
 ├── Clip_VIT_h14/
 │   ├── scalar
@@ -109,7 +137,7 @@ CS-671_Project/
 │   ├── svm_rbf_dinov2_model_cuml.pkl
 │   └── classification_report/
 └── README.md
-
+```
 ------------------------------------------------------------------------------------
 
 Key Takeaways:
