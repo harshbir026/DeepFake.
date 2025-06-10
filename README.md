@@ -108,7 +108,7 @@ CS-671_Project/
 │   ├── scalar
 │   ├── svm_rbf_dinov2_model_cuml.pkl
 │   └── classification_report/
-└── README.txt
+└── README.md
 
 ------------------------------------------------------------------------------------
 
