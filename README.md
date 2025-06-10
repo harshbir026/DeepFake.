@@ -41,7 +41,7 @@ significant threats such as:
 - Identity fraud
 - Erosion of public trust
 
-Most existing methods fail to generalize across different generators — our approach 
+Most existing methods fail to generalize across different generators: our approach 
 addresses this gap.
 
 ------------------------------------------------------------------------------------
@@ -96,11 +96,11 @@ Directory Structure:
 
 Due to GitHub file size limits, models and reports are stored externally:
 
-📁 DINOv2 Folder: [Drive Link](https://drive.google.com/drive/folders/1o-rxIA8mBluSk5WyvsWYKBJafrtU19mP).
+📁 DINOv2 Folder: [Drive Link](https://drive.google.com/drive/folders/1o-rxIA8mBluSk5WyvsWYKBJafrtU19mP)
 
-📁 CLIP ViT-H14 & L14 Folders:[Drive Link](https://drive.google.com/drive/folders/1HWMmCz8TIfiMe6svDLCtQCoTkJACb50E).
+📁 CLIP ViT-H14 & L14 Folders:[Drive Link](https://drive.google.com/drive/folders/1HWMmCz8TIfiMe6svDLCtQCoTkJACb50E)
 
-📁 Additional Files / Random Experiments:[Drive Link](https://drive.google.com/drive/folders/1cei3Wf9XndkQgJdc96IiPbgrm9lZCVYT).
+📁 Additional Files / Random Experiments:[Drive Link](https://drive.google.com/drive/folders/1cei3Wf9XndkQgJdc96IiPbgrm9lZCVYT)
 
 📂 Repo Structure (with important files):
 
@@ -159,9 +159,9 @@ Future Work:
 Work is currently in progress on applying **few-shot learning & adversarial training** to adapt models 
 to unseen deepfake generators quickly.
 
-📽️ Few-Shot Learning & Adversarial Training Concept PPT: [Drive Link](https://drive.google.com/file/d/1bFFZ-0i3eJBwT7fuRwZECMxyfnmg406-/view?usp=drivesdk).
+📽️ Few-Shot Learning & Adversarial Training Concept PPT: [Drive Link](https://drive.google.com/file/d/1bFFZ-0i3eJBwT7fuRwZECMxyfnmg406-/view?usp=drivesdk)
 
-📽️ Final Project Presentation PPT: [Drive Link](https://drive.google.com/file/d/1bGOYsq3QnbITUGEotX1A_Ua9PC5SCV00/view?usp=drivesdk).
+📽️ Final Project Presentation PPT: [Drive Link](https://drive.google.com/file/d/1bGOYsq3QnbITUGEotX1A_Ua9PC5SCV00/view?usp=drivesdk)
 
 Other directions include:
 - Reduce embedding dimensionality for efficiency.
