@@ -1,7 +1,7 @@
 Deepfake Detection in Images using Signature Analysis and Robust Adversarial Handling
 ====================================================================================
 
-Course Project: CS-671: Deep Learning and its Applications
+
 
 Project Statement:
 Deepfake Detection in Images using Signature Analysis and Robust Adversarial Handling
@@ -12,16 +12,11 @@ Team Members:
 
 Name                        | Roll No. | Email
 ----------------------------|----------|-----------------------------------------------
-Aditya Tayal                | B23243   | b23243@students.iitmandi.ac.in
-Karanpreet Singh Dhaliwal  | B23138   | b23138@students.iitmandi.ac.in
+Harshbir Singh              | B23131   | b23131@students.iitmandi.ac.in
 Kinshuk Chauhan             | B23142   | b23142@students.iitmandi.ac.in
 Yatin Gupta                 | B23186   | b23186@students.iitmandi.ac.in
-Mayur Arora                 | B23213   | b23213@students.iitmandi.ac.in
 Mankirat Singh Saini        | B23270   | b23270@students.iitmandi.ac.in
 
-Mentors:
-- Ms. Parul Chaudhary
-- Dr. Arnav Bhavsar
 
 ------------------------------------------------------------------------------------
 
@@ -105,7 +100,7 @@ Due to GitHub file size limits, models and reports are stored externally:
 📂 Repo Structure (with important files):
 
 ```
-CS-671_Project/
+DeepFake/
 ├── Clip_VIT_h14/
 │   ├── scalar
 │   ├── svm_rbf_clip_vit_h14_model_cuml.pkl
@@ -156,12 +151,7 @@ RBF SVM provided the best results in terms of accuracy and generalization.
 Future Work:
 ------------
 
-Work is currently in progress on applying **few-shot learning & adversarial training** to adapt models 
-to unseen deepfake generators quickly.
-
-📽️ Few-Shot Learning & Adversarial Training Concept PPT: [Drive Link](https://drive.google.com/file/d/1bFFZ-0i3eJBwT7fuRwZECMxyfnmg406-/view?usp=drivesdk)
-
-📽️ Final Project Presentation PPT: [Drive Link](https://drive.google.com/file/d/1bGOYsq3QnbITUGEotX1A_Ua9PC5SCV00/view?usp=drivesdk)
+📽️ Final Project Presentation PPT: [Drive Link](https://drive.google.com/file/d/1wsM53T_M7B3XvXTtWweAw6Omfbi73UKZ/view?usp=sharing)
 
 Other directions include:
 - Reduce embedding dimensionality for efficiency.
@@ -170,13 +160,5 @@ Other directions include:
 
 ------------------------------------------------------------------------------------
 
-Contact:
---------
 
-For any queries, contact: [Aditya Tayal](mailto:adityatayal404@gmail.com)
 
-------------------------------------------------------------------------------------
-
-Note:
------
-Developed as part of coursework for CS-671: Deep Learning and Its Applications at IIT Mandi.
